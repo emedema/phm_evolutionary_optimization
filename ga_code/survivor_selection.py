@@ -1,46 +1,60 @@
-import itertools
+"""
+My collection of survivor selection methods
+"""
+
+
 import random
+import evaluation
+import operator
 
 
-def mu_plus_lambda(current_pop, current_fitness, offspring, offspring_fitness):
-    """mu+lambda selection"""
+def sort_population(population, fitness): # sort a population based on fitness, from max to min
+    pop_fit_pair = list(map(list,zip(population, fitness)))
+    pop_fit_pair.sort(key=operator.itemgetter(1), reverse=True)
+    sorted_pop = []
+    sorted_fit = []
+    for entry in pop_fit_pair:
+        sorted_pop.append(entry[0])
+        sorted_fit.append(entry[1])
+    return sorted_pop, sorted_fit
 
-    # creating a dictionary to list the population and the fitness together
-    # new lists for storing the concatenated lists in
-    new_curr = []
-    new_off = []
-    for i in current_pop:
-        temp = "".join(str(j) for j in i)
-        new_curr.append(temp)
 
-    for i in offspring:
-        temp = "".join(str(j) for j in i)
-        new_off.append(temp)
-
-    # zipping the individuals and its fitness together for both current population and offspring
-    temp_curr = dict(zip(new_curr, current_fitness))
-    temp_off = dict(zip(new_off, offspring_fitness))
-
-    # combining the dictionaries together
-    temp_combo = {**temp_curr, **temp_off}
-
-    # sorting the individuals based on their fitness, from high to low
-    sorted_temp = dict(sorted(temp_combo.items(), key=lambda kv: kv[1], reverse=True))
-
-    # taking the length of the initial current population to take the first highest ranking individuals
-    curr_len = len(current_pop)
-    slicedDict = dict(itertools.islice(sorted_temp.items(), 0, curr_len))
-
-    # unraveling the string made from before to return it to a list of numbers
-    temp_pop = list(slicedDict.keys())
+def mu_plus_lambda(current_pop, current_fitness, offspring, offspring_fitness):   
     population = []
-    for i in temp_pop:
-        temp = []
-        for j in i:
-            temp.append(int(j))
-        population.append(temp)
-
-    # taking the list of values of the dictionary, i.e. the fitness of the individuals
-    fitness = list(slicedDict.values())
-
+    fitness = []
+    temp_pop = current_pop.copy() + offspring.copy()
+    temp_fit = current_fitness.copy() + offspring_fitness.copy()
+    sorted_pop, sorted_fit = sort_population(temp_pop, temp_fit)
+    for i in range(0,len(current_pop)):
+        population.append(sorted_pop[i])
+        fitness.append(sorted_fit[i])
     return population, fitness
+
+
+def replacement(current_pop, current_fitness, offspring, offspring_fitness):
+    population = []
+    fitness = []
+    sorted_pop, sorted_fit = sort_population(current_pop.copy(), current_fitness.copy())
+    k = len(current_pop) - len(offspring)
+    for i in range(0,k):
+        population.append(sorted_pop[i])
+        fitness.append(sorted_fit[i])
+    for j in range(0,len(offspring)):
+        population.append(offspring[j])
+        fitness.append(offspring_fitness[j])       
+    return population, fitness
+
+
+def random_uniform(current_pop, current_fitness, offspring, offspring_fitness):
+    population = []
+    fitness = []
+    temp_pop = current_pop.copy() + offspring.copy()
+    temp_fit = current_fitness.copy() + offspring_fitness.copy()
+    pick_index = random.sample(range(0,len(temp_pop)), len(current_pop))
+    for i in range(0,len(pick_index)):
+        population.append(temp_pop[pick_index[i]])
+        fitness.append(temp_fit[pick_index[i]])
+    return population, fitness
+    
+
+
