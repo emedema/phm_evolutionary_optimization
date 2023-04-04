@@ -1,1 +1,4 @@
-# either accuracy of F1-score
+# maximize F1-score
+#def evalutation:
+    #call
+    #return
