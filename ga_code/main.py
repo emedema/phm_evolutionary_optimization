@@ -15,7 +15,7 @@ def main():
     random.seed()
     numpy.random.seed()
 
-    string_length = 8  # may extend to N queens
+    string_length = 28  # may extend to N queens
     # you may test on different parameter settings
     popsize = 20
     mating_pool_size = int(popsize * 0.5)  # has to be even
@@ -26,10 +26,10 @@ def main():
 
     # initialize population
     gen = 0  # initialize the generation counter
-    population = initialization.permutation(popsize, string_length)
+    population = initialization.initial(popsize, string_length)
     fitness = []
     for i in range(0, popsize):
-        fitness.append(evaluation.fitness_8queen(population[i]))
+        fitness.append(evaluation.fitness_model(population[i]))
     # print("fitness list", fitness)
     print("generation", gen, ": best fitness", max(fitness), "\taverage fitness", sum(fitness) / len(fitness))
 
@@ -67,9 +67,9 @@ def main():
                 off2 = mutation.permutation_swap(off2)
 
             offspring.append(off1)
-            offspring_fitness.append(evaluation.fitness_8queen(off1))
+            offspring_fitness.append(evaluation.fitness_model(off1))
             offspring.append(off2)
-            offspring_fitness.append(evaluation.fitness_8queen(off2))
+            offspring_fitness.append(evaluation.fitness_model(off2))
             i = i + 2  # update the counter
 
         # organize the population of next generation
