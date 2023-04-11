@@ -1,4 +1,5 @@
 FROM nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
+#FROM ubuntu:20.04
 LABEL maintainer="Hugging Face"
 LABEL repository="transformers"
 
@@ -7,7 +8,6 @@ RUN apt update && \
                    build-essential \
                    git \
                    curl \
-                   ca-certificates \
                    python3 \
                    python3-pip && \
     rm -rf /var/lib/apt/lists

@@ -12,6 +12,7 @@ import survivor_selection
 
 
 def main():
+    print("Starting...")
     random.seed()
     numpy.random.seed()
 
