@@ -23,7 +23,7 @@ def main():
     tournament_size = 4 # paper: 10
     xover_rate = 0.9
     mut_rate = 0.2 # 0.3
-    gen_limit = 20 #50
+    gen_limit = 15 #50
 
     # initialize population
     gen = 0  # initialize the generation counter
@@ -58,8 +58,8 @@ def main():
                 off1, off2 = recombination.uniformXover(population[parents_index[i]],
                                                                          population[parents_index[i + 1]])
             else:
-                off1 = population[parents_index[i]].copy()
-                off2 = population[parents_index[i + 1]].copy()
+                off1 = population[parents_index[i]]#.copy()
+                off2 = population[parents_index[i + 1]]#.copy()
 
             # mutation
             if random.random() < mut_rate:
