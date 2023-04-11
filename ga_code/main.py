@@ -23,7 +23,7 @@ def main():
     tournament_size = 4 # paper: 10
     xover_rate = 0.9
     mut_rate = 0.2 # 0.3
-    gen_limit = 1 #50
+    gen_limit = 20 #50
 
     # initialize population
     gen = 0  # initialize the generation counter
