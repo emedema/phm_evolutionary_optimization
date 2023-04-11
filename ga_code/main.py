@@ -55,7 +55,7 @@ def main():
 
             # recombination
             if random.random() < xover_rate:
-                off1, off2 = recombination.permutation_cut_and_crossfill(population[parents_index[i]],
+                off1, off2 = recombination.uniformXover(population[parents_index[i]],
                                                                          population[parents_index[i + 1]])
             else:
                 off1 = population[parents_index[i]].copy()
@@ -63,9 +63,9 @@ def main():
 
             # mutation
             if random.random() < mut_rate:
-                off1 = mutation.permutation_swap(off1)
+                off1 = mutation.bitFlip(off1)
             if random.random() < mut_rate:
-                off2 = mutation.permutation_swap(off2)
+                off2 = mutation.bitFlip(off2)
 
             offspring.append(off1)
             offspring_fitness.append(evaluation.fitness_model(off1))
