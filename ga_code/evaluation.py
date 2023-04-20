@@ -26,8 +26,8 @@ def fitness_model(bitstring):
     if BERT_LAYER > 13:
         BERT_LAYER = 13 ## embedding layer = 0 and then layers 1 - 12, make sure these numbers get translated to the right values
 
-    BATCH_SIZE = 64
-    EPOCHS = 5 #10
+    BATCH_SIZE = 32
+    EPOCHS = 10
     NUM_FEATURES = 4
     ## need length of tweet
 

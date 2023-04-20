@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1cf52f88-2514-41d7-bb42-e4f08961f7d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga_code/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_code/evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ga_code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_code/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +165,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679425963797</updated>
-      <workItem from="1681148873986" duration="5016000" />
+      <workItem from="1681148873986" duration="7088000" />
+      <workItem from="1682001090073" duration="92000" />
     </task>
     <servers />
   </component>

@@ -20,10 +20,10 @@ def main():
     # you may test on different parameter settings
     popsize = 20
     mating_pool_size = int(popsize * 0.5)  # has to be even
-    tournament_size = 4 # paper: 10
+    tournament_size = 10 #4 # paper: 10
     xover_rate = 0.9
     mut_rate = 0.2 # 0.3
-    gen_limit = 15 #50
+    gen_limit = 20 #50
 
     # initialize population
     gen = 0  # initialize the generation counter
