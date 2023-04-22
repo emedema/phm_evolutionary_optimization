@@ -31,7 +31,7 @@ def fitness_model(bitstring):
     NUM_FEATURES = 4
     ## need length of tweet
 
-    df = pd.read_pickle("./training_data.pkl")
+    df = pd.read_pickle("./training_data_all_keep_first.pkl")
 
     # uncomment if you want to see what the df looks like
     #shape = df.shape
