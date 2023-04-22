@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1cf52f88-2514-41d7-bb42-e4f08961f7d0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ga_code/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_code/evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ga_code/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ga_code/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -166,7 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679425963797</updated>
       <workItem from="1681148873986" duration="7088000" />
-      <workItem from="1682001090073" duration="92000" />
+      <workItem from="1682001090073" duration="733000" />
     </task>
     <servers />
   </component>
@@ -185,6 +183,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/ga_code/evaluation.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/phm_evolutionary_optimization$main.coverage" NAME="main Coverage Results" MODIFIED="1681150903437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ga_code" />
